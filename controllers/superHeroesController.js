@@ -20,3 +20,31 @@ module.exports.getSuperHero = async (req, res, next) => {
   const superHero = await Superheroes.findByPk(heroId);
   res.status(200).send({ data: superHero });
 };
+
+module.exports.editSuperHerov1 = async (req, res, next) => {
+  const {
+    params: { heroId },
+    body: newData,
+  } = req;
+  await Superheroes.update(newData, { where: { id: heroId } });
+  res.status(201).send("Okay!");
+};
+
+module.exports.editSuperHero = async (req, res, next) => {
+  const {
+    body: newData,
+    params: { heroId },
+  } = req;
+  const hero = await Superheroes.findByPk(heroId);
+  await hero.update(newData, { returning: true });
+  res.status(201).send({ data: hero });
+};
+
+module.exports.deleteSuperHero = async (req, res, next) => {
+  const {
+    params: { heroId },
+  } = req;
+  const hero = await Superheroes.findByPk(heroId);
+  await hero.destroy();
+  res.status(200).send({ data: hero });
+};

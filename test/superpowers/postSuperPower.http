@@ -1,0 +1,6 @@
+POST http://localhost:5001/superpowers
+Content-Type:application/json
+
+{
+    "superpowers_name":"Blistatelnaya Hucpa Rav"
+}

@@ -2,9 +2,9 @@ POST http://localhost:5001/superheroes
 Content-Type: application/json
 
 {
-    "nickname":"Rav Arestovich",
-    "realName":"Oleksii Arestovich",
-    "originDescription":"About 2-3 week",
-    "superpowers":"Vangovanie",
-    "catch_phrase":"Blistatelnaya huzpa!"
+    "nickname":"Jeleznffffiy chelsdfsdsdffsdfsdfsdfsdfoveck",
+    "realName":"Rav Vlasmffffsdfsdfsdfsdfffan",
+    "originDescription":"Blisdddtatdfffelnaysdfsdfa hsdfsdfucpa!",
+    "superpowers":"Kek",
+    "catch_phrase":"Blisfffddddddtatesdfsdfsdfsdflnaya huzpa!Proso ssdfsfuper!"
 }

@@ -44,7 +44,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       superpowers: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: false,
         validate: {
           notEmpty: true,

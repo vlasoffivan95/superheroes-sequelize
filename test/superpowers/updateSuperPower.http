@@ -1,0 +1,6 @@
+PUT http://localhost:5001/superpowers/1
+Content-Type:application/json
+
+{
+    "superpowers_name":"Blistatelnaya Hucpa Rav Zelcman!"
+}
