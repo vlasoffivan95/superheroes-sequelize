@@ -1,5 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
+const { FOREIGNKEYS } = require("sequelize/types/query-types");
 module.exports = (sequelize, DataTypes) => {
   class Superheroes extends Model {
     /**
@@ -8,7 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Superheroes.hasMany(models.Superpowers, {
+        foreignKey: "superhero_id",
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      });
     }
   }
   Superheroes.init(
@@ -25,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       realName: {
         type: DataTypes.STRING,
         allowNull: false,
-        field:"real_name",
+        field: "real_name",
         unique: true,
         validate: {
           notEmpty: true,
@@ -35,8 +40,8 @@ module.exports = (sequelize, DataTypes) => {
       originDescription: {
         type: DataTypes.TEXT,
         unique: true,
-        field:'origin_description',
-        allowNull:false,
+        field: "origin_description",
+        allowNull: false,
         validate: {
           notEmpty: true,
           notNull: true,

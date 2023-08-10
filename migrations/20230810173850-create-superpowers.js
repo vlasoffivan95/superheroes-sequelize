@@ -13,7 +13,23 @@ module.exports = {
         type: Sequelize.STRING,
         unique: true,
         allowNull: false,
+
       },
+
+      superhero_id: {
+        type: Sequelize.INTEGER,
+        field:'superhero_id',
+        references:{
+          model:{
+            tableName:'superheroes'
+          },
+          key:'id'
+        },
+        onDelete:'CASCADE',
+        onUpdate:'CASCADE'
+
+      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
